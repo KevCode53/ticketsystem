@@ -42,11 +42,14 @@ BASE_APPS = [
 
 LOCAL_APPS = [
     'apps.core',
-    'apps.users'
+    'apps.authjwt',
+    'apps.users',
+    'apps.tickets'
 ]
 
 THIRD_APPS = [
     'rest_framework',
+    'drf_yasg',
     # 'rest_framework.authtoken',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
@@ -70,6 +73,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # Se utiliza para las internacionalizaciones
+    # 'django.middleware.locale.LocaleMiddleware'
+    # Se utilia para validar las creaciones de usuario
+    'crum.CurrentRequestUserMiddleware',
     # Simple History
     'simple_history.middleware.HistoryRequestMiddleware',
 ]

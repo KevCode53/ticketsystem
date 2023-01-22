@@ -27,7 +27,7 @@ from apps.users.api.serializers.user_serializers import UserSerializer, UserList
 class UserViewSet(viewsets.GenericViewSet):
   serializer_class = UserSerializer
   list_serializer_class = UserListSerializer
-  # permission_classes = (IsAuthenticated,)
+  permission_classes = (IsAuthenticated,)
 
   def get_queryset(self, pk=None):
     if self.queryset is None:
