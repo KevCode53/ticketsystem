@@ -22,7 +22,7 @@ class BaseModel(models.Model):
         related_name='updated_by%(app_label)s_%(class)s_related', blank=True, null=True)
     updated = models.DateField(
         _('Updated'), auto_now=True, blank=True, null=True)
-    historical = HistoricalRecords()
+    historical = HistoricalRecords(inherit=True)
 
     class Meta:
         """Meta definition for BaseModel."""
@@ -36,7 +36,6 @@ class BaseModel(models.Model):
 
     def save(self, *args, **kwargs):
         """Save method for BaseModel."""
-        print('new object created in DB')
         # Guardando el user
         user = get_current_user()
         if user is not None:

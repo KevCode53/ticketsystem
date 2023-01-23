@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from apps.tickets.models import Tickets, ImagesTicket
+from apps.comments.api.serializers import CommentsTicketSerializers
 from apps.tickets.api.serializers.images_tickets_serializers import ImagesTicketSerializer
 from apps.users.api.serializers.user_serializers import CustomUserSerializer
 
@@ -10,10 +11,10 @@ class TicketSerializer(serializers.ModelSerializer):
         model = Tickets
         fields = '__all__'
 
-
 class ListTicketSerializer(serializers.ModelSerializer):
 
     images = serializers.StringRelatedField(many=True)
+    comments = CommentsTicketSerializers(many=True, read_only=True)
     # requesting_by = CustomUserSerializer(read_only=True)
 
     class Meta:
@@ -21,9 +22,8 @@ class ListTicketSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'created', 'updated', 'state',
             'description', 'service', 'created_by',
-            'updated_by', 'requesting_by', 'assigned_to', 'images'
+            'updated_by', 'requesting_by', 'assigned_to', 'images', 'comments'
         )
-
 
 class CreateTicketSerializer(serializers.ModelSerializer):
     images = ImagesTicketSerializer(many=True, read_only=True)
@@ -36,7 +36,7 @@ class CreateTicketSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tickets
         fields = ('id', 'service', 'description', 'state',
-                  'requesting_by', 'assigned_to', 'assigned_to', 'upload_images', 'images')
+                  'requesting_by', 'assigned_to', 'upload_images', 'images')
 
     def create(self, validated_data):
         """ Create a new Ticket """
@@ -47,6 +47,10 @@ class CreateTicketSerializer(serializers.ModelSerializer):
                 ticket=ticket, image=image)
         return ticket
 
+class HistoricalTicketSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Tickets
+        fields = '__all__'
 
 class UpdateAssignedTicketSerializer(serializers.ModelSerializer):
     class Meta:
@@ -68,3 +72,14 @@ class UpdateAssignedTicketSerializer(serializers.ModelSerializer):
             'service': instance.service,
             'description': instance.description
         }
+
+class DetailTicketSerializer(serializers.ModelSerializer):
+    comments = CommentsTicketSerializers(many=True, read_only=True)
+    images = ImagesTicketSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Tickets
+        fields = (
+            'id', 'created','service','description','state',
+            'requesting_by','assigned_to','images', 'comments'
+            )

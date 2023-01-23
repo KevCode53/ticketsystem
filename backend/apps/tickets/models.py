@@ -7,6 +7,7 @@ from apps.users.models import User
 # Create your models here.
 
 
+
 def ticketImage_directory_path(instance, filename):
     return 'ticket_{0}/images/{1}'.format(instance.ticket, filename)
 
@@ -62,5 +63,33 @@ class ImagesTicket(BaseModel):
     def __str__(self):
         """Unicode representation of Files."""
         return self.image.url
+
+    # TODO: Define custom methods here
+
+
+class AssignmentHistory(BaseModel):
+    """Model definition for TimeLineTicket."""
+
+    # TODO: Define fields here
+    ticket = models.ForeignKey(
+        Tickets, on_delete=models.CASCADE, verbose_name=_('Ticket'),
+        related_name='previus_designee')
+    previus_designee = models.ForeignKey(
+        User, verbose_name= _('Previus designee'), related_name='previus_designee',
+        blank=True, null=True, on_delete=models.CASCADE)
+    assigned_to = models.ForeignKey(
+        User, verbose_name= _('Assigned to'), related_name='assigned_to',
+        blank=True, null=True, on_delete=models.CASCADE)
+    reason = models.TextField(_('Reason'))
+
+    class Meta:
+        """Meta definition for TimeLineTicket."""
+
+        verbose_name = _('Assignment History')
+        verbose_name_plural = _('Assignments History')
+
+    def __str__(self):
+        """Unicode representation of TimeLineTicket."""
+        return '%s' % (self.created)
 
     # TODO: Define custom methods here

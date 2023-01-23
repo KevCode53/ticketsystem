@@ -46,6 +46,7 @@ urlpatterns = [
     path('', include('apps.authjwt.urls')),
     path('users/', include('apps.users.api.routers')),
     path('tickets/', include('apps.tickets.api.routers')),
+    path('comments/', include('apps.comments.api.routers')),
     # path('auth/', include('apps.auth.api.routers')),
     # Swagger
     re_path(r'^swagger(?P<format>\.json|\.yaml)$',
