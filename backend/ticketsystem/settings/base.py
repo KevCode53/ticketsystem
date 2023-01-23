@@ -53,6 +53,7 @@ THIRD_APPS = [
     'rest_framework',
     'drf_yasg',
     # 'rest_framework.authtoken',
+    'corsheaders',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
     'simple_history',
@@ -69,6 +70,8 @@ REST_FRAMEWORK = {
 }
 
 MIDDLEWARE = [
+    # Cors Headers
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -176,3 +179,13 @@ SWAGGER_SETTINGS = {
         }
     }
 }
+
+# CORS CONFIG
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:3000",
+    "http://localhost:3000"
+]
+CORS_ORIGIN_WHITELIST= [
+    "http://127.0.0.1:3000",
+    "http://localhost:3000"
+]
