@@ -30,7 +30,7 @@ class Login(TokenObtainPairView):
     )
 
     if user:
-      print(self.serializer_class())
+      # print(self.serializer_class())
       login_serializer = self.serializer_class(data=request.data)
       if login_serializer.is_valid():
         user_serializer = CustomUserSerializer(user)

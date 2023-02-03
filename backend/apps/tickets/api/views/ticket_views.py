@@ -5,16 +5,22 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated
+from rest_framework import pagination
 
 from apps.tickets.api.serializers.ticket_serialziers import (
     TicketSerializer, CreateTicketSerializer, ListTicketSerializer,
     UpdateAssignedTicketSerializer, HistoricalTicketSerializers, DetailTicketSerializer)
 from apps.tickets.api.serializers.images_tickets_serializers import ImagesTicketSerializer
 
+class StandardResultsSetPagination(pagination.PageNumberPagination):
+    page_size = 5
+    page_size_query_param = 'page_size'
+    max_page_size = 20
 
 class TicketViewSet(viewsets.GenericViewSet):
     serializer_class = TicketSerializer
     permission_classes = (IsAuthenticated, )
+    pagination_class = StandardResultsSetPagination
 
     def get_queryset(self, pk=None):
         if self.queryset is None:
@@ -26,9 +32,12 @@ class TicketViewSet(viewsets.GenericViewSet):
 
     def list(self, request):
         tickets = self.get_queryset()
-        tickets_serializer = ListTicketSerializer(tickets, many=True)
-        return Response(tickets_serializer.data, status=status.HTTP_200_OK)
-    
+        paginator = self.pagination_class()
+        tickets_paginated = paginator.paginate_queryset(tickets, request)
+        tickets_serializer = ListTicketSerializer(tickets_paginated, many=True)
+        print(self.pagination_class)
+        return paginator.get_paginated_response(tickets_serializer.data)
+
     def retrieve(self, request, pk=None):
         ticket = self.get_object(pk)
         ticket_serializer = DetailTicketSerializer(ticket)
@@ -52,14 +61,14 @@ class TicketViewSet(viewsets.GenericViewSet):
             ticket_serializer.save()
             return Response({'message': 'The ticket has been assigned', 'ticket': ticket_serializer.data})
         return Response({'error': 'Ticket assignment error'}, status=status.HTTP_409_CONFLICT)
-    
+
     @action(detail=False, methods=['get'])
     def ticket_history(self, request, pk=None):
-        
+
         ticket = self.get_object(request.data['pk'])
         print(ticket)
         ticket_serializer = HistoricalTicketSerializers(ticket)
         print(ticket_serializer)
         return Response(ticket_serializer.data)
         return Response({'error': ticket_serializer.errors}, status=status.HTTP_409_CONFLICT)
-        
+

@@ -11,8 +11,9 @@ class CustomTokenUserProfileSerializer(serializers.ModelSerializer):
 
   def to_representation(self, instance):
     return {
+      'first_name': instance.user.name,
+      'image': instance.image.url,
+      'last_name': instance.user.last_name,
       'username': instance.user.username,
-      'name': instance.user.get_full_name(),
       # 'email': instance.user.email,
-      'image': instance.image.url
     }
