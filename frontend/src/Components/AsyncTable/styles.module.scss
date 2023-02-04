@@ -1,0 +1,45 @@
+.table {
+  width: 100%;
+  max-width: 120rem;
+  border-spacing: 0;
+  border: 0.1rem solid white;
+
+  tr {
+    &:last-child {
+      td {
+        border-bottom: 0;
+      }
+    }
+  }
+  th,
+  td {
+    text-align: center;
+    margin: 0;
+    padding: 0.5rem;
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: end;
+  padding: 1.2rem;
+
+  button {
+    border: white 0.1rem solid;
+    width: 3.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.2;
+    }
+  }
+}
