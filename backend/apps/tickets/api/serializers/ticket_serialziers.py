@@ -3,7 +3,7 @@ from rest_framework import serializers
 from apps.tickets.models import Tickets, ImagesTicket
 from apps.comments.api.serializers import CommentsTicketSerializers
 from apps.tickets.api.serializers.images_tickets_serializers import ImagesTicketSerializer
-from apps.users.api.serializers.user_serializers import CustomUserSerializer
+from apps.users.api.serializers.user_serializers import UserListSerializer
 
 
 class TicketSerializer(serializers.ModelSerializer):
@@ -15,7 +15,9 @@ class ListTicketSerializer(serializers.ModelSerializer):
 
     images = serializers.StringRelatedField(many=True)
     comments = CommentsTicketSerializers(many=True, read_only=True)
-    # requesting_by = CustomUserSerializer(read_only=True)
+    requesting_by = UserListSerializer(read_only=True)
+    created_by = UserListSerializer(read_only=True)
+    assigned_to = serializers.StringRelatedField() # Dpende del metodo __str__ del modelo
 
     class Meta:
         model = Tickets

@@ -11,6 +11,9 @@
   margin: 0;
   padding: 0;
   border: 0;
+  appearance: none;
+  outline: none;
+  text-decoration: none;
   box-sizing: border-box;
   vertical-align: baseline;
 }
@@ -116,9 +119,10 @@ svg {
 /* Configuramos la tipografia para toda la web */
 body {
   min-height: 100vh;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: var(--white);
-  background-color: var(--dark);
+  background-color: rgba(var(--color-background), 1);
+  font-family: poppins, sans-serif;
 
   /* Opcional */
   /* line-height: 1.4rem; */
@@ -127,33 +131,4 @@ body {
   position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-ftont-smoothing: grayscale;
-}
-
-section {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  min-height: 100vh;
-  padding: 7rem 2rem;
-}
-
-@font-face {
-  font-family: 'baloo';
-  src: url('../assets/fonts/Baloo2-Regular.ttf'),
-    url('../assets/fonts/Baloo2-Medium.ttf'),
-    url('../assets/fonts/Baloo2-Bold.ttf'),
-    url('../assets/fonts/Baloo2-ExtraBold.ttf');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'baloo-extra';
-  src:  url('../assets/fonts/Baloo2-ExtraBold.ttf');
-}
-
-@font-face {
-  font-family: 'fredo';
-  src: url('../assets/fonts/FredokaOne-Regular.ttf');
-  font-weight: normal;
-  font-style: normal;
 }

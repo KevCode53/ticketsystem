@@ -1,0 +1,40 @@
+/* -------------- ROOT VARIABLES ------------------ */
+:root {
+  --color-primary: 115, 128, 236;
+  --color-danger: 255, 119, 130;
+  --color-succes: 65, 241, 182;
+  --color-warning: 255, 187, 85;
+  --color-white: 250, 250, 250;
+  --color-info-dark: 125, 141, 161;
+  --color-info-light: 220, 225, 235;
+  --color-dark: 54, 57, 73;
+  --color-light: 132,139,200;
+  --color-primary-variant: 17, 30, 136;
+  --color-dark-variant: 103, 116, 131;
+  --color-background: 246, 246, 249;
+
+  --card-border-radius: 2rem;
+  --border-radius-1: .4rem;
+  --border-radius-2: .8rem;
+  --border-radius-3: 1.2rem;
+
+  --card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+
+  --box-shadow: 0 2rem 3rem rgba(var(--color-light), .18)
+}
+
+body {
+  user-select: none;
+  overflow-x: hidden;
+}
+
+.profile-photo {
+  width: 4rem;
+  height: 4rem;
+}
+.profile-photo img {
+  border-radius: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}

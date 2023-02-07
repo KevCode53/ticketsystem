@@ -1,14 +1,12 @@
-import { Table, TableBody, TableContainer, TableHead, Paper, TableRow, TableCell, Pagination, PaginationItem, TextField, FormControl, InputLabel, OutlinedInput, InputAdornment } from "@mui/material";
-import { Box, Stack } from "@mui/system";
 import { useEffect } from "react";
 import { useTable, usePagination, useSortBy, useGlobalFilter } from "react-table";
-import { useAsync } from "../../hooks/useAsync";
 import { TableProps } from "../../models/async-table.model";
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import SearchIcon from '@mui/icons-material/Search';
+import { Link } from "react-router-dom";
 
 import styles from './styles.module.scss'
 
@@ -59,6 +57,7 @@ const index = ({
     gotoPage(value - 1)
   }
 
+  // console.log(data)
 
   return (
     <>
@@ -87,6 +86,7 @@ const index = ({
                   {column.render('Header')}
                 </th>
               ))}
+              <th>Actions</th>
             </tr>
           ))}
         </thead>
@@ -106,6 +106,7 @@ const index = ({
                       </td>
                     )
                   })}
+                  <td><Link to={`${row.id}`}>Detail</Link></td>
                 </tr>
             )
           })}
