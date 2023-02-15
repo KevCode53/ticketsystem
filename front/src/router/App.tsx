@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
+import Login from '../pages/login'
 import Home from '../pages/home/index'
 import Tickets from '../pages/tickest'
 import NoFound from '../pages/noFound'
@@ -15,6 +16,7 @@ function App() {
     <BrowserRouter>
     <MenuContextProvider>
       <Routes>
+        <Route path='/login' element={<Login />} />
         <Route path='/' element={<Home />} />
         <Route path='/tickets' element={<Tickets />} />
         <Route path='/tickets/:id' element={<Detail />} />
