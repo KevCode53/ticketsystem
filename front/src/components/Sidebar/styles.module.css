@@ -1,0 +1,269 @@
+.sidebar {
+  background: rgba(var(--color-dark), 0.8);
+  position: fixed;
+  width: 100%;
+  min-width: 29rem;
+  height: 100vh;
+  z-index: 1;
+  transform: translateX(-100%);
+  transition: all ease 300ms;
+}
+/* --------- OPEN MENU MOBILE --------- */
+.menuOpen {
+  transform: translateX(0%);
+}
+
+.container {
+  width: 85%;
+  max-width: 29rem;
+  height: 100%;
+  background: rgba(var(--color-background));
+}
+
+/* --------- TOP --------- */
+.top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 18rem;
+  padding: 1.6rem;
+  background: rgba(var(--color-info-dark),.2);
+}
+.top picture {
+  display: flex;
+  width: auto;
+  align-items: center;
+  height: 4rem;
+  gap: .6rem;
+}
+
+.top picture img {
+  object-fit: contain;
+  width: 4rem;
+}
+
+.top picture h3 {
+  transition: all ease 300ms;
+}
+
+.top button {
+  margin-top: .5rem;
+  width: 3rem;
+  height: 3rem;
+  background: rgba(var(--color-info-dark),.5);
+  border-radius: 100%;
+  cursor: pointer;
+  transition: all ease 300ms;
+}
+
+.top button svg {
+  font-size: 1.4rem;
+  transition: all ease 300ms;
+}
+
+.top button:hover {
+  background: rgba(var(--color-info-dark),.7);
+}
+.top button:hover svg {
+  transform: scale(150%);
+}
+
+/* --------- TOP CONTRACT MENU BTN --------- */
+.btnContractMenu {
+  display: none;
+}
+.top .btnContractMenu svg {
+  font-size: 1.8rem;
+  transition: all 300ms ease;
+}
+/* --------- TOP CLOSE MENU BTN --------- */
+
+
+
+/* ---------  USER INFO --------- */
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .6rem;
+  padding: 1.6rem;
+  height: 10rem;
+}
+.userInfo picture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  gap: .6rem;
+  height: 4.1rem;
+  transition: all 300ms ease;
+}
+.userInfo picture h3 {
+  transition: all 300ms ease;
+}
+.userInfo picture img {
+  width: 7rem;
+  height: 7rem;
+  object-fit: contain;
+  position: absolute;
+  top: -5.5rem;
+  background: rgba(var(--color-info-dark),.7);
+  border-radius: 100%;
+}
+
+
+/* ---------  MENU LIST --------- */
+.menuList {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - (10rem + 19.6rem));
+}
+.menuList a {
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+  padding: 1.6rem;
+  color: rgba(var(--color-info-dark));
+  padding-left: 2.4rem;
+  position: relative;
+  transition: all ease 300ms;
+}
+.menuList a:last-child {
+  margin-top: auto;
+}
+.menuList a h3 {
+  font-weight: 500;
+  transition: all 300ms ease;
+}
+.menuList a svg {
+  font-size: 2.6rem;
+  transition: all 300ms ease;
+}
+/* ---------  MENU LIST ITEM PILL --------- */
+.menuList a span {
+  padding: .6rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  right: 0;
+  color: rgba(var(--color-white));
+  background: rgba(var(--color-danger));
+  transition: all 300ms ease;
+}
+/* ---------  MENU LIST ITEM HOVER --------- */
+.menuList a:hover {
+  color: rgba(var(--color-primary), .7);
+  background: rgba(var(--color-light), .1);
+  padding-left: 3.4rem;
+}
+
+/* ---------  MENU LIST ITEM ACTIVE --------- */
+.menuList .active {
+  color: rgba(var(--color-primary));
+  padding-left: 1.6rem;
+  background: rgba(var(--color-light), .18);
+  position: relative;
+}
+.menuList .active:hover {
+  color: rgba(var(--color-primary));
+  padding-left: 1.6rem;
+}
+
+.menuList .active::before {
+  content: "";
+  height: 100%;
+  width: .6rem;
+  background: rgba(var(--color-primary));
+  position: absolute;
+  right: 0;
+}
+
+
+
+
+
+@media (min-width: 768px) {
+  .sidebar {
+    position: relative;
+    max-width: 29rem;
+    min-width: 12rem;
+    transition: all ease 300ms;
+    transform: translateX(0%);
+  }
+  /* --------- MENU CONTRACT --------- */
+  .contract {
+    width: 10rem;
+  }
+  /* --------- CONTRACT TOP --------- */
+  .contract .top picture h3 {
+    position: absolute;
+    opacity: 0;
+    transform: translateX(-200%);
+  }
+  .contract .top .btnContractMenu svg{
+    transform: rotate(180deg);
+  }
+
+
+  /* --------- CONTRACT USER INFO --------- */
+  .contract .userInfo picture {
+    height: 1.6rem;
+  }
+  .contract .userInfo picture h3 {
+    position: absolute;
+    opacity: 0;
+    transform: translateX(-200%);
+  }
+
+
+  /* --------- CONTRACT MENU LIST --------- */
+  .contract .menuList a {
+    padding: 1.3rem 1.6rem;
+    justify-content: center;
+  }
+  .contract .menuList a h3 {
+    opacity: 0;
+    position: absolute;
+    transform: translate(-200%);
+  }
+  .contract .menuList a svg {
+    font-size: 3.2rem;
+  }
+  /* --------- CONTRACT MENU LIST HOVER --------- */
+  .contract .menuList a:hover svg {
+    transform: scale(90%) rotate(-10deg);
+  }
+  /* --------- CONTRACT MENU LIST ACTIVE --------- */
+  .contract .menuList a.active:hover svg {
+    transform: scale(100%) rotate(0deg);
+  }
+
+  /* --------- CONTRACT MENU LIST PILL--------- */
+  .contract .menuList a span {
+    position: absolute;
+    top: .5rem;
+    font-size: 1rem;
+    width: 2.5rem;
+    left: calc(50% + .5rem);
+  }
+
+
+
+
+
+  .container {
+    width: 100%;
+  }
+
+  /* --------- TOP CONTRACT MENU BTN --------- */
+  .btnContractMenu {
+    display: block;
+  }
+  /* --------- TOP CLOSE MENU BTN --------- */
+  .btnCloseMenu {
+    display: none;
+  }
+}

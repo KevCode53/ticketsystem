@@ -1,0 +1,8 @@
+.card {
+  width: 100%;
+  /* background: red; */
+  box-shadow: var(--box-shadow);
+  border-radius: var(--card-border-radius);
+  padding: var(--card-padding);
+  transition: all 300ms ease;
+}

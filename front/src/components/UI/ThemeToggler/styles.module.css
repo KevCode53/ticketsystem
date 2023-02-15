@@ -1,0 +1,36 @@
+.themeToggler {
+  width: 5.4rem;
+  background: rgba(var(--color-light), .18);
+  height: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: var(--border-radius-2);
+  margin-right: 2.2rem;
+}
+.themeToggler span {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.themeToggler svg {
+  font-size: 2rem;
+}
+
+.active {
+  background: rgba(var(--color-primary));
+  color: white;
+  border-radius: var(--border-radius-2);
+}
+
+@keyframes select {
+  0% {transform: rotate(180);}
+  25% {transform: rotate(360);}
+  50% {transform: rotate(180);}
+  75% {transform: rotate(360);}
+  100% {transform: rotate(0);}
+}

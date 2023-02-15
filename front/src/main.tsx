@@ -5,8 +5,9 @@ import App from './router/App'
 import './main.css'
 import './reset.css'
 
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  // <React.StrictMode>
+  <React.StrictMode>
     <App />
-  // </React.StrictMode>,
+  </React.StrictMode>,
 )

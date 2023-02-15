@@ -1,0 +1,49 @@
+.container {
+  height: 100vh;
+  /* display: grid; */
+  /* grid-template-columns: 23rem auto; */
+  position: relative;
+  transition: all 300ms ease;
+  display: flex;
+}
+
+/* aside {
+  background: red;
+  height: 100vh;
+} */
+
+main {
+  display: grid;
+  background: skyblue;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.topbar {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  background: yellow;
+}
+.mainContainer {
+  /* display: grid; */
+  /* grid-template-columns: auto minmax(25rem, 30rem); */
+  gap: 2.2rem;
+  overflow-y: scroll;
+  min-height: calc(100vh - 6rem);
+  position: relative;
+  padding: 2rem;
+}
+
+.right .updates{
+  position: sticky;
+  top: 0;
+}
+
+@media (min-width: 768px) {
+  .container {
+    height: 100vh;
+    display: flex;
+  }
+}
