@@ -11,7 +11,10 @@ class Comment(BaseModel):
   """Model definition for Comment."""
 
   # TODO: Define fields here
-  ticket = models.ForeignKey(Tickets, on_delete=models.CASCADE, verbose_name=_('comments'))
+  ticket = models.ForeignKey(
+      Tickets, on_delete=models.CASCADE, verbose_name=_('comments'),
+      related_name=_('comments')
+    )
   comment = RichTextField(verbose_name=_('Comment'))
 
   class Meta:

@@ -42,7 +42,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 class Profile(models.Model):
   """Model definition for Profile."""
-  user = models.OneToOneField(User, verbose_name=_('Username'), on_delete=models.CASCADE)
+  user = models.OneToOneField(User, verbose_name=_('Username'), on_delete=models.CASCADE , related_name='profile')
   phone = models.CharField(_('Phone'),max_length=15, null=True, blank=True)
   image = models.ImageField(_('User Image'), default='no-user.jpg', upload_to='profile/images', blank=True, null=True)
   address = models.CharField(_('Address'), max_length=250, null=True, blank=True)

@@ -121,7 +121,7 @@ body {
   min-height: 100vh;
   font-size: 1.4rem;
   color: var(--white);
-  background-color: rgba(var(--color-background), 1);
+  background-color: rgba(var(--color-background));
   font-family: poppins, sans-serif;
 
   /* Opcional */

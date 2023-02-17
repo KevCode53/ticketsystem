@@ -1,0 +1,105 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 2.4rem;
+  gap: 2.4rem;
+}
+.quickView {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  justify-content: center;
+  gap: 2.4rem;
+}
+.quickCard {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+}
+.quickCard{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quickCard h3 {
+  font-size: clamp(6rem, 2vw, 12rem);
+  color: rgba(var(--color-dark));
+  font-weight: 800;
+}
+.quickCard span {
+  font-size: clamp(1.2rem, 2vw, 1.8rem);;
+}
+.quickCard svg {
+  transform: rotate(15deg);
+  font-size: clamp(12rem, 10vw, 14rem);
+  right: 0;
+}
+.quickCard.info svg {
+  fill: rgba(var(--color-info-light));
+}
+
+
+.searchContainer {
+  padding: 1.6rem;
+  margin-bottom: 2.2rem;
+}
+.searchContainer h3 {
+  font-size: 3.2rem;
+  color: rgba(var(--color-primary-variant));
+}
+.searchForm {
+  display: flex;
+  align-items: center;
+  max-width: 90rem;
+  margin: 0 auto;
+  position: relative;
+}
+.searchForm div {
+  width: 100%;
+  max-width: none;
+  margin-top: 2.2rem;
+}
+.searchForm div input {
+  width: 100%;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.searchForm input[type=submit] {
+  width: 100%;
+  max-width: 15rem;
+  background: rgba(var(--color-primary));
+  height: 4.5rem;
+  border: .2rem solid transparent;
+  margin-top: 2.2rem;
+  margin-bottom: 1.2rem;
+  border-bottom-right-radius: 1.6rem;
+  border-top-right-radius: 1.6rem;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: rgba(var(--color-white));
+  transition: all 300ms ease;
+}
+.searchForm input[type=submit]:hover {
+  font-size: 1.8rem;
+}
+
+.searchForm small {
+  position: absolute;
+  bottom: -.5rem;
+  left: 1.6rem;
+}
+
+.containerList {
+  padding: 2rem .1rem !important;
+}
+
+
+
+@media (min-width: 600px) {
+  .quickView {
+    /* flex-direction: row; */
+  }
+}

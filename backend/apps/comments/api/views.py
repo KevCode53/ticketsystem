@@ -10,7 +10,7 @@ from apps.comments.api.serializers import CommentSerializer
 
 class CommentViewSet(viewsets.GenericViewSet):
   serializer_class = CommentSerializer
-  permission_classes = (IsAuthenticated, )
+  # permission_classes = (IsAuthenticated, )
 
   def get_queryset(self, pk=None):
     if self.queryset is None:
@@ -25,7 +25,7 @@ class CommentViewSet(viewsets.GenericViewSet):
     print(request.GET)
     comments_serializer = CommentSerializer(comments, many=True)
     return Response(comments_serializer.data, status=status.HTTP_200_OK)
-  
+
   def create(self, request):
     comment = self.request.data
     comment_serializer = CommentSerializer(data=comment)
@@ -34,4 +34,4 @@ class CommentViewSet(viewsets.GenericViewSet):
       comment_serializer.save()
       return Response(comment_serializer.data)
     return Response({'error': comment_serializer.errors}, status=status.HTTP_409_CONFLICT)
-    
+

@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from apps.tickets.models import Tickets, ImagesTicket
-from apps.comments.api.serializers import CommentsTicketSerializers
+from apps.comments.api.serializers import CommentsTicketSerializers, CommentSerializer
 from apps.tickets.api.serializers.images_tickets_serializers import ImagesTicketSerializer
 from apps.users.api.serializers.user_serializers import UserListSerializer
 
@@ -14,7 +14,7 @@ class TicketSerializer(serializers.ModelSerializer):
 class ListTicketSerializer(serializers.ModelSerializer):
 
     images = serializers.StringRelatedField(many=True)
-    comments = CommentsTicketSerializers(many=True, read_only=True)
+    comments = CommentSerializer(many=True, read_only=True)
     requesting_by = UserListSerializer(read_only=True)
     created_by = UserListSerializer(read_only=True)
     assigned_to = serializers.StringRelatedField() # Dpende del metodo __str__ del modelo
@@ -37,8 +37,10 @@ class CreateTicketSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Tickets
-        fields = ('id', 'service', 'description', 'state',
-                  'requesting_by', 'assigned_to', 'upload_images', 'images')
+        fields = (
+            'id', 'service', 'description', 'state',
+            'requesting_by', 'assigned_to', 'upload_images', 'images'
+        )
 
     def create(self, validated_data):
         """ Create a new Ticket """
@@ -76,8 +78,9 @@ class UpdateAssignedTicketSerializer(serializers.ModelSerializer):
         }
 
 class DetailTicketSerializer(serializers.ModelSerializer):
-    comments = CommentsTicketSerializers(many=True, read_only=True)
+    comments = CommentSerializer(many=True, read_only=True)
     images = ImagesTicketSerializer(many=True, read_only=True)
+    requesting_by = UserListSerializer(read_only=True)
 
     class Meta:
         model = Tickets

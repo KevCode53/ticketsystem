@@ -9,11 +9,11 @@ class CustomTokenUserProfileSerializer(serializers.ModelSerializer):
     model = Profile
     fields = ('image', 'user')
 
-  def to_representation(self, instance):
-    return {
-      'first_name': instance.user.name,
-      'image': instance.image.url,
-      'last_name': instance.user.last_name,
-      'username': instance.user.username,
-      # 'email': instance.user.email,
-    }
+  # def to_representation(self, instance):
+  #   return {
+  #     'first_name': instance.user.name,
+  #     'image': instance.image.url,
+  #     'last_name': instance.user.last_name,
+  #     'username': instance.user.username,
+  #     # 'email': instance.user.email,
+  #   }

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import { useMenuContext } from '../../hooks/useMenuContext'
 
+import MenuList from '../../containers/MenuList'
+
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
@@ -53,21 +55,7 @@ const index = () => {
         </div>
 
         <div className={styles.menuList}>
-          <Link to="/" className={styles.active}>
-            <DashboardIcon />
-            <h3>Dashboard</h3>
-          </Link>
-          <Link to="/">
-            <AssignmentIcon />
-            <h3>
-              Tickets
-            </h3>
-            <span>68</span>
-          </Link>
-          <Link to="/">
-            <LogoutIcon />
-            <h3>Logout</h3>
-          </Link>
+          <MenuList />
         </div>
 
       </div>

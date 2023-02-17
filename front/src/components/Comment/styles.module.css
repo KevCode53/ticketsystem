@@ -1,0 +1,50 @@
+.commentContainer {
+  display: grid;
+  grid-template-columns: 3rem auto;
+  align-items: flex-start;
+  gap: .6rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+.commentContainer::after {
+  content: "";
+  width: .2rem;
+  height: calc(100% - 4rem);
+  background: rgba(var(--color-dark-variant), .2);
+  position: absolute;
+  left: 1.5rem;
+  top: 5.2rem;
+}
+.commentContainer:last-child::after {
+  display: none;
+}
+
+
+.commentContainer picture {
+  display: flex;
+  width: 3rem;
+  flex-direction: column;
+  gap: .4rem;
+}
+.commentContainer picture img {
+  object-fit: contain;
+  border-radius: 100%;
+  width: 3rem;
+  height: 3rem;
+  border: .1rem solid rgba(var(--color-white));
+  margin-top: 1.2rem;
+}
+.comment {
+  box-shadow: .2rem .2rem 1rem rgba(var(--color-light), .3);
+  border-radius: var(--card-border-radius);
+}
+
+.commentHeader {
+  padding: .8rem 1.2rem;
+  border-bottom: .1rem solid rgba(var(--color-dark-variant), .1);
+}
+
+.commentText {
+  padding: 1.2rem;
+}

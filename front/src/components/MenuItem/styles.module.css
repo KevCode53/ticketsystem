@@ -1,0 +1,95 @@
+/* ---------  MENU ITEM --------- */
+.menuItem {
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+  padding: 1.6rem;
+  color: rgba(var(--color-info-dark));
+  padding-left: 2.4rem;
+  position: relative;
+  transition: all ease 300ms;
+}
+.menuItem h3 {
+  font-weight: 500;
+  transition: all 300ms ease;
+}
+.menuItem svg {
+  font-size: 2.6rem;
+  transition: all 300ms ease;
+}
+
+/* ---------  MENU ITEM PILL --------- */
+.menuItem span {
+  padding: .6rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  right: 0;
+  color: rgba(var(--color-white));
+  background: rgba(var(--color-danger));
+  transition: all 300ms ease;
+}
+
+/* ---------  MENU LIST ITEM HOVER --------- */
+.menuItem:hover {
+  color: rgba(var(--color-primary), .7);
+  background: rgba(var(--color-light), .1);
+  padding-left: 3.4rem;
+}
+
+/* ---------  MENU LIST ITEM ACTIVE --------- */
+.active {
+  color: rgba(var(--color-primary));
+  padding-left: 1.6rem;
+  background: rgba(var(--color-light), .18);
+  position: relative;
+}
+.active:hover {
+  color: rgba(var(--color-primary));
+  background: rgba(var(--color-light), .18);
+  padding-left: 1.6rem;
+}
+.active::before {
+  content: "";
+  height: 100%;
+  width: .6rem;
+  background: rgba(var(--color-primary));
+  position: absolute;
+  right: 0;
+}
+
+
+@media (min-width: 768px) {
+  .contract.menuItem {
+    padding: 1.3rem 1.6rem;
+    justify-content: center;
+  }
+  .contract.menuItem h3 {
+    opacity: 0;
+    position: absolute;
+    transform: translateX(-200%);
+  }
+  .contract.menuItem svg {
+    font-size: 3.2rem;
+  }
+  /* --------- CONTRACT MENU LIST HOVER --------- */
+  .contract.menuItem:hover svg{
+    transform: scale(90%) rotate(-10deg);
+  }
+
+  /* --------- CONTRACT MENU LIST ACTIVE --------- */
+  .contract.active.menuItem:hover svg{
+    transform: scale(100%) rotate(0deg);
+  }
+  /* --------- CONTRACT MENU LIST PILL--------- */
+  .contract.menuItem span {
+    position: absolute;
+    top: .5rem;
+    font-size: 1rem;
+    width: 2.5rem;
+    left: calc(50% + .5rem);
+  }
+
+}

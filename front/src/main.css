@@ -1,8 +1,9 @@
 /* -------------- ROOT VARIABLES ------------------ */
 :root {
   --color-primary: 115, 128, 236;
-  --color-danger: 255, 119, 130;
-  --color-success: 65, 241, 182;
+  --color-danger: 255, 99, 100;
+  --color-dark-red: 170, 0, 0;
+  --color-success: 75, 221, 212;
   --color-warning: 255, 187, 85;
   --color-white: 250, 250, 250;
   --color-info-dark: 125, 141, 161;
@@ -11,7 +12,7 @@
   --color-light: 132,139,200;
   --color-primary-variant: 17, 30, 136;
   --color-dark-variant: 103, 116, 131;
-  --color-background: 246, 246, 249;
+  --color-background: 241, 241, 241;
 
   --card-border-radius: 2rem;
   --border-radius-1: .4rem;
@@ -21,7 +22,7 @@
   --card-padding: 1.8rem;
   --padding-1: 1.2rem;
 
-  --box-shadow: 0 2rem 3rem rgba(var(--color-light), .18)
+  --box-shadow: 0 1rem 3rem rgba(var(--color-light), .3)
 }
 
 body {
@@ -53,13 +54,14 @@ small {
 /* ---------- CARD STYLE BEGIN ---------- */
 .card {
   width: 100%;
+  /* background: rgba(var(--color-white), .2); */
   box-shadow: var(--box-shadow);
   border-radius: var(--card-border-radius);
   padding: var(--card-padding);
   transition: all 300ms ease;
 }
 .card:hover {
-  box-shadow: none;
+  /* box-shadow: none; */
 }
 /* ---------- CARD STYLE END ---------- */
 
@@ -137,4 +139,51 @@ small {
 
 .btn-primary:hover {
   background: rgba(var(--color-primary));
+}
+
+
+.btn {
+  min-height: 4.5rem;
+  width: 100%;
+  max-width: 30rem;
+  border-radius: 1rem;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(211, 211, 211);
+  /* box-shadow: .5rem .5rem 1rem rgba(var(--color-info-dark)); */
+}
+.btn svg {
+  font-size: 2.2rem;
+  margin-right: .4rem;
+}
+.btn-info{
+  background: rgba(var(--color-warning));
+}
+.btn-success {
+  background: rgba(var(--color-success));
+}
+.btn-danger {
+  background: rgba(var(--color-danger));
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  gap: 2.2rem;
+}
+
+.row > div {
+  width: 100%;
+}
+
+/* ---------- NAVBAR STYLE ---------- */
+::-webkit-scrollbar {
+  background: rgba(var(--color-white), .5);
+  width: 1rem;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--color-info-dark), .5);
+  border-radius: .5rem;
 }

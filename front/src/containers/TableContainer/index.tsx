@@ -17,17 +17,15 @@ const index = () => {
   const [users, setUsers] = useState([])
   const [pageCount, setPageCount] = useState(0)
 
-  const getApiData = async (page:number) => await callEndpoint(fetchUsers(page+1))
-
   const adaptData = (data:any) => {
     setUsers(data.results)
-    setPageCount(data.count)
+    setPageCount(data.total_pages)
     return data.data
   }
 
   const fetchData = useCallback(async (page:number) => {
     const result = await callEndpoint(fetchTickets(page+1))
-    adaptData(result.data)
+    await adaptData(result.data)
   },[])
 
   return (

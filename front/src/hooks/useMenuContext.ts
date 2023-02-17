@@ -5,7 +5,6 @@ export const useMenuContext = () => {
   const {isOpen, setOpen, isExpand, setExpand} = useContext(MenuContext)
 
   const openMenu = () => {
-    console.log('Open Menu')
     setOpen(true)
   }
 

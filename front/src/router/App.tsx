@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
+import Layout from '../containers/Layout'
+
 import Login from '../pages/login'
 import Home from '../pages/home/index'
-import Tickets from '../pages/tickest'
+import Tickets from '../pages/tickets'
 import NoFound from '../pages/noFound'
 import Detail from '../pages/DetailTicket'
 
@@ -15,13 +17,15 @@ function App() {
   return (
     <BrowserRouter>
     <MenuContextProvider>
-      <Routes>
-        <Route path='/login' element={<Login />} />
-        <Route path='/' element={<Home />} />
-        <Route path='/tickets' element={<Tickets />} />
-        <Route path='/tickets/:id' element={<Detail />} />
-        <Route path='*' element={<NoFound/>} />
-      </Routes>
+      <Layout>
+        <Routes>
+          <Route path='/' element={<Login />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/tickets' element={<Tickets />} />
+          <Route path='/tickets/:id' element={<Detail />} />
+          <Route path='*' element={<NoFound/>} />
+        </Routes>
+      </Layout>
     </MenuContextProvider>
     </BrowserRouter>
   )

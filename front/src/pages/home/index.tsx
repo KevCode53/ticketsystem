@@ -6,175 +6,140 @@ import Sidebar from '../../components/Sidebar'
 
 const index = () => {
   return (
-    <div className="container">
-      <Sidebar />
+    <div className="mainContainer">
+      <div className="content">
 
-      <main>
+        <h2>Dashboard</h2>
 
-        {/* <div className="topbar">
+        <Card>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
 
-          <div className="menuIcon">
-            ...
-          </div>
+          </p>
+        </Card>
+        <Card>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
 
-          <div className="themeToggler">
-            <span>Sun</span>
-            <span>Moon</span>
-          </div>
+          </p>
+        </Card>
+        <Card>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
 
-          <div className="profileInfo">
-            <div className="info">
-              <p>Hey, <b>User</b></p>
-              <small>Admin</small>
-            </div>
-            <picture className="profilePhoto">
-              <img src="https://yt3.ggpht.com/yti/AHXOFjWy7lM0fG5CqdE0in1KurrrOkvSLOALZCwV9dPS4Ks=s88-c-k-c0x00ffffff-no-rj-mo" alt="" />
-            </picture>
-          </div>
+          </p>
+        </Card>
+        <Card>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
 
-        </div> */}
-        <Topbar/>
+          </p>
+        </Card>
+        <Card>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
 
-        <div className="mainContainer">
-          <div className="content">
+          </p>
+        </Card>
+        <Card>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
 
-            <h2>Dashboard</h2>
+          </p>
+        </Card>
+        <Card>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
 
-            <Card>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
+          </p>
+        </Card>
+        <Card>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
 
-              </p>
-            </Card>
-            <Card>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
+          </p>
+        </Card>
+        <Card>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
 
-              </p>
-            </Card>
-            <Card>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
+          </p>
+        </Card>
+        <Card>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
 
-              </p>
-            </Card>
-            <Card>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
+          </p>
+        </Card>
+        <Card>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
 
-              </p>
-            </Card>
-            <Card>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
+          </p>
+        </Card>
+        <Card>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
 
-              </p>
-            </Card>
-            <Card>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
+          </p>
+        </Card>
+        <Card>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
 
-              </p>
-            </Card>
-            <Card>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
+          </p>
+        </Card>
+        <Card>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
 
-              </p>
-            </Card>
-            <Card>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
+          </p>
+        </Card>
+        <Card>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
 
-              </p>
-            </Card>
-            <Card>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
+          </p>
+        </Card>
 
-              </p>
-            </Card>
-            <Card>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
+      </div>
 
-              </p>
-            </Card>
-            <Card>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
+      <div className="right">
+        <div className="updates">
+          
+          <h3>Info</h3>
 
-              </p>
-            </Card>
-            <Card>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
+          <Card>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit, excepturi!
+            </p>
+          </Card>
 
-              </p>
-            </Card>
-            <Card>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
+          <Card>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit, excepturi!
+            </p>
+          </Card>
 
-              </p>
-            </Card>
-            <Card>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
+          <Card>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit, excepturi!
+            </p>
+          </Card>
 
-              </p>
-            </Card>
-            <Card>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sed nemo, soluta fugit inventore provident minima molestias aperiam voluptatum repudiandae voluptas veniam reiciendis deleniti perspiciatis earum ipsum quis aliquam ad possimus rem placeat laboriosam. Omnis, excepturi vel. Ipsum, eaque. Quasi adipisci, commodi magnam nostrum asperiores vel iure minima maxime velit.
+          <Card>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit, excepturi!
+            </p>
+          </Card>
 
-              </p>
-            </Card>
-
-          </div>
-
-          <div className="right">
-            <div className="updates">
-              
-              <h3>Info</h3>
-
-              <Card>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit, excepturi!
-                </p>
-              </Card>
-
-              <Card>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit, excepturi!
-                </p>
-              </Card>
-
-              <Card>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit, excepturi!
-                </p>
-              </Card>
-
-              <Card>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit, excepturi!
-                </p>
-              </Card>
-
-              <Card>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit, excepturi!
-                </p>
-              </Card>
-            </div>
-          </div>
+          <Card>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit, excepturi!
+            </p>
+          </Card>
         </div>
-
-
-      </main>
-
-
+      </div>
     </div>
   )
 }

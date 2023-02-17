@@ -8,7 +8,7 @@ import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from "react-router-dom";
 
-import styles from './styles.module.scss'
+import styles from './styles.module.css'
 
 const index = ({
   data,
@@ -53,16 +53,16 @@ const index = ({
   },[fetchData, pageIndex])
 
   const paginationOnChange = (e:any, value:any) => {
-    console.log(pageIndex)
     gotoPage(value - 1)
   }
 
-  // console.log(data)
+  // console.log(tableInstance)
 
   return (
     <>
       <div className={styles.search}>
-        <div className={styles.form_group}>
+
+        {/* <div className={styles.form_group}>
           <input
             type="text"
             required
@@ -75,8 +75,9 @@ const index = ({
               Search
             </span>
           </label>
-        </div>
+        </div> */}
       </div>
+
       <table className={styles.table}>
         <thead {...getTableProps()}>
           {headerGroups.map((headerGroup) => (
@@ -100,18 +101,20 @@ const index = ({
               return (
                 <tr {...row.getRowProps()}>
                   {row.cells.map((cell) => {
+                    console.log(row)
                     return (
                       <td {...cell.getCellProps()}>
                         {cell.render('Cell')}
                       </td>
                     )
                   })}
-                  <td><Link to={`${row.id}`}>Detail</Link></td>
+                  <td><Link to={`${row.original.id}`}>Detail</Link></td>
                 </tr>
             )
           })}
         </tbody>
       </table>
+
       <div className={styles.pagination}>
         <div className="">
         <span>
