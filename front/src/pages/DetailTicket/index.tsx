@@ -3,13 +3,18 @@ import { useAsync } from "../../hooks/useAsync";
 import { fetchDetailTicket } from "../../services/private.ticket.service";
 
 import styles from './styles.module.css'
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+
+import Accordion from '../../components/UI/Accordion'
 
 import AutorenewIcon from '@mui/icons-material/Autorenew';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import DoDisturbAltIcon from '@mui/icons-material/DoDisturbAlt';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import EditIcon from '@mui/icons-material/Edit';
 
-import Accordion from '@mui/material/Accordion';
+// import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -23,11 +28,14 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 
 import CommentsList from '../../containers/CommentsList'
+import Breadcrumbs from "../../components/UI/Breadcrumbs";
+import { validateTicketStates } from "../../utilities/ticketsStateList";
 
 
 const index = () => {
   const {isLoading, callEndpoint} = useFetchAndLoad()
   const [data, setData] = useState({})
+  const [showOptions, setShowOptions] = useState(false)
 
   const getApiData = async(id:number) => await callEndpoint(fetchDetailTicket(52))
 
@@ -35,18 +43,80 @@ const index = () => {
 
   useAsync(getApiData, adaptData, ()=>{}, [])
 
-  return (
-    <div className={styles.container}>
+  const showOptionsHandler = () => {
+    setShowOptions(!showOptions)
+  }
 
-      <div className="info">
-        <h2>Ticket No. {data.id}</h2>
+  const state = validateTicketStates(data.state)
+
+  console.log(data)
+  return (
+
+  <div className={styles.container}>
+
+    <div className={styles.titleRow}>
+
+      <div className={styles.titleContainer}>
+        <div className={styles.title}>
+          <h2>Ticket No. {data.id}</h2>
+          <div className={`
+            ${styles.state}
+            ${state}
+          `}>
+            <p>{data.state_word}</p>
+          </div>
+        </div>
+        <div className={styles.info}>
+          <p>Created: <small>{data.created}</small></p>
+        </div>
+      </div>
+
+      <button>
+        <EditIcon />
+        <span>Change Status</span>
+      </button>
+
+    </div>
+
+    {/* ------------ DETAILS ------------ */}
+
+    <div className={styles.commentsImagesRow}>
+      <div className={styles.imagesContainer}>
+        <h3>Images</h3>
+        <div className={styles.images}>
+          {data.images && data.images.map((image) => (
+            <img src={`http://127.0.0.1:8000${image.image}`} alt="" />
+          ))}
+        </div>
+      </div>
+      {/* <h3>Comments</h3> */}
+      <CommentsList className={styles.commentsContainer} comments={data.comments} />
+    </div>
+    
+
+      {/* <div className={styles.info}>
+        <div className={styles.titleSection}>
+          <h2>Ticket No. {data.id}</h2>
+          <div className={styles.mobileOptions}>
+            <button onClick={showOptionsHandler}>
+              <MoreVertIcon />
+            </button>
+            <div className={`
+              ${showOptions && styles.showOptions}
+            `}>
+              <button>In Progres</button>
+              <button>Finalized</button>
+              <button>Refused</button>
+            </div>
+          </div>
+        </div>
         <div className="">
           <span>{data.created}</span>
           <span>{data.status}</span>
         </div>
-      </div>
+      </div> */}
 
-      <div className={styles.content}>
+      {/* <div className={styles.content}>
 
         <div className={styles.left}>
 
@@ -89,7 +159,6 @@ const index = () => {
                   )
                   : (<></>)
                 }
-                {/* <p>{data.requesting_by}</p> */}
               </div>
             </div>
 
@@ -130,7 +199,7 @@ const index = () => {
           </div>
         </div>
 
-      </div>
+      </div> */}
 
 
     </div>

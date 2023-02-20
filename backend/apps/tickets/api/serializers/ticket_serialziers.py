@@ -81,10 +81,16 @@ class DetailTicketSerializer(serializers.ModelSerializer):
     comments = CommentSerializer(many=True, read_only=True)
     images = ImagesTicketSerializer(many=True, read_only=True)
     requesting_by = UserListSerializer(read_only=True)
+    state_word = serializers.SerializerMethodField()
 
     class Meta:
         model = Tickets
         fields = (
             'id', 'created','service','description','state',
-            'requesting_by','assigned_to','images', 'comments'
+            'requesting_by','assigned_to','images', 'comments',
+            'state_word'
             )
+    
+    def get_state_word(self, instance):
+        return instance.word_state()
+    

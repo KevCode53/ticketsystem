@@ -16,11 +16,11 @@ class Tickets(BaseModel):
     """Model definition for Tickets."""
 
     STATES = [
-        (-1, _('Refused')),
-        (0, _('Created')),
-        (1, _('Assigned')),
-        (2, _('In Process')),
-        (3, _('Finalized')),
+        (-1, _('refused')),
+        (0, _('created')),
+        (1, _('assigned')),
+        (2, _('in_Process')),
+        (3, _('finalized')),
     ]
 
     # TODO: Define fields here
@@ -43,6 +43,18 @@ class Tickets(BaseModel):
         return '%s - %s %s' % (self.pk, self.created, self.requesting_by)
 
     # TODO: Define custom methods here
+
+    def word_state(self):
+        if self.state == -1:
+            return 'refused'
+        elif self.state == 0:
+            return 'created'
+        elif self.state == 1:
+            return 'assigned'
+        elif state == 2:
+            return 'in_process'
+        else:
+            return 'finalized'
 
 
 class ImagesTicket(BaseModel):

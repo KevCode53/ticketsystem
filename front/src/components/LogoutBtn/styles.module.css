@@ -41,7 +41,7 @@
     font-size: 3.2rem;
   }
   /* --------- CONTRACT MENU LIST HOVER --------- */
-  .logoutBtn.contract:hover {
+  .logoutBtn.contract:hover svg {
     transform: scale(90%) rotate(-10deg);
   }
 

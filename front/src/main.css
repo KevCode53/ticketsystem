@@ -180,10 +180,32 @@ small {
 
 /* ---------- NAVBAR STYLE ---------- */
 ::-webkit-scrollbar {
-  background: rgba(var(--color-white), .5);
+  /* background: rgba(var(--color-white), .5); */
   width: 1rem;
 }
 ::-webkit-scrollbar-thumb {
   background: rgba(var(--color-info-dark), .5);
   border-radius: .5rem;
+}
+
+
+
+/* ---------- TICKET STATE PILL ---------- */
+.created {
+  /* background: rgba(163, 163, 202, 0.719); */
+}
+.refused {
+  background: rgba(var(--color-dark-red));
+  color: rgba(var(--color-white));
+}
+.assigned {
+  background: rgba(var(--color-primary-variant));
+  color: rgba(var(--color-white));
+}
+.in_process {
+  background: rgba(var(--color-warning));
+}
+.finalized {
+  background: rgba(var(--color-success));
+  color: rgba(var(--color-white));
 }

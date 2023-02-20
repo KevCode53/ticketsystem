@@ -15,7 +15,7 @@
 
 .container {
   width: 75%;
-  max-width: 29rem;
+  max-width: 30rem;
   height: 100%;
   background: rgba(var(--color-background));
   /* box-shadow: var(--box-shadow); */
@@ -125,7 +125,7 @@
 @media (min-width: 768px) {
   .sidebar {
     position: relative;
-    max-width: 25rem;
+    max-width: 30rem;
     min-width: 12rem;
     transition: all ease 300ms;
     transform: translateX(0%);

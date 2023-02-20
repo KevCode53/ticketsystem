@@ -18,9 +18,9 @@ const index = ({children}:{children:ReactElement}) => {
             <Sidebar />
             <main className={styles.main}>
               <Topbar />
-              {/* <div className={styles.mainContainer}> */}
+              <div className={styles.mainContainer}>
                 {children}
-              {/* </div> */}
+              </div>
             </main>
           </>
         )

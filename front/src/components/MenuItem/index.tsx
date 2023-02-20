@@ -21,7 +21,7 @@ const index = (
 
 
   useEffect(()=>{
-    if (pathname === path) {
+    if (pathname === path || pathname.includes(path)) {
       setActive(true)
     } else {
       setActive(false)

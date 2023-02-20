@@ -3,6 +3,8 @@
   flex-direction: column;
   padding: 2.4rem;
   gap: 2.4rem;
+  /* max-width: 128rem; */
+  margin: 0 auto;
 }
 .quickView {
   display: grid;
@@ -44,7 +46,7 @@
 
 .searchContainer {
   padding: 1.6rem;
-  margin-bottom: 2.2rem;
+  /* margin-bottom: 1.6rem; */
 }
 .searchContainer h3 {
   font-size: 3.2rem;
@@ -53,7 +55,7 @@
 .searchForm {
   display: flex;
   align-items: center;
-  max-width: 90rem;
+  /* max-width: 90rem; */
   margin: 0 auto;
   position: relative;
 }

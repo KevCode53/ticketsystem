@@ -5,6 +5,7 @@
   gap: .6rem;
   margin-bottom: 1.2rem;
   position: relative;
+  margin-right: 1.6rem;
 }
 
 .commentContainer::after {

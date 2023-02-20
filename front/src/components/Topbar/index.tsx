@@ -12,24 +12,28 @@ const index = () => {
   const {openMenu} = useMenuContext()
 
   return (
-    <nav className={styles.topbar_container}>
-      <button
-        className={styles.menuIcon}
-        onClick={openMenu}
-      >
-        <MenuIcon />
-      </button>
+    <nav className={styles.topbar}>
+      <div className={styles.topbar_container}>
 
-      <ThemeToggler />
+        <button
+          className={styles.menuIcon}
+          onClick={openMenu}
+        >
+          <MenuIcon />
+        </button>
 
-      <div className={styles.profileInfo}>
-        <div className="info">
-          <p>Hey, <b>User</b></p>
-          <small>Admin</small>
+        <ThemeToggler />
+
+        <div className={styles.profileInfo}>
+          <div className="info">
+            <p>Hey, <b>User</b></p>
+            <small>Admin</small>
+          </div>
+          <picture className="profilePhoto">
+            <img src="https://randomuser.me/api/portraits/lego/7.jpg" alt="" />
+          </picture>
         </div>
-        <picture className="profilePhoto">
-          <img src="https://randomuser.me/api/portraits/lego/7.jpg" alt="" />
-        </picture>
+        
       </div>
     </nav>
   )

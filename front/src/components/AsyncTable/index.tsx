@@ -56,7 +56,6 @@ const index = ({
     gotoPage(value - 1)
   }
 
-  // console.log(tableInstance)
 
   return (
     <>
@@ -101,7 +100,6 @@ const index = ({
               return (
                 <tr {...row.getRowProps()}>
                   {row.cells.map((cell) => {
-                    console.log(row)
                     return (
                       <td {...cell.getCellProps()}>
                         {cell.render('Cell')}
