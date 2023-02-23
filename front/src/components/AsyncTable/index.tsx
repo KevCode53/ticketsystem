@@ -93,7 +93,7 @@ const index = ({
         <tbody {...getTableBodyProps()}>
           { rows.length < 1
             ? (<tr>
-                <td colSpan={columns.length}>No records found in the query</td>
+                <td colSpan={columns.length + 1}>No records found in the query</td>
             </tr>)
             :rows.map((row) => {
               prepareRow(row)

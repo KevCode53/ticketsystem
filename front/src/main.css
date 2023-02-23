@@ -14,7 +14,7 @@
   --color-dark-variant: 103, 116, 131;
   --color-background: 241, 241, 241;
 
-  --card-border-radius: 2rem;
+  --card-border-radius: 1.2rem;
   --border-radius-1: .4rem;
   --border-radius-2: .8rem;
   --border-radius-3: 1.2rem;
@@ -124,6 +124,23 @@ small {
   background: rgba(var(--color-background));
 }
 
+.btn {
+  min-height: 4.5rem;
+  width: 100%;
+  max-width: 30rem;
+  border-radius: 1rem;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(211, 211, 211);
+  font-weight: 700;
+  /* box-shadow: .5rem .5rem 1rem rgba(var(--color-info-dark)); */
+}
+.btn svg {
+  font-size: 2.2rem;
+  margin-right: .4rem;
+}
 .btn-primary {
   margin: 0 auto;
   height: 4.5rem;
@@ -138,26 +155,23 @@ small {
 }
 
 .btn-primary:hover {
-  background: rgba(var(--color-primary));
+  background: rgba(var(--color-primary-variant), .9);
+}
+
+.btn-secondary {
+  color: rgba(var(--color-primary-variant));
+  background: transparent;
+  border: .2rem solid rgba(var(--color-info-dark));
+  transition: all 300ms ease;
+}
+.btn-secondary:hover {
+  background: rgba(var(--color-info-light));
+  border: .2rem solid rgba(var(--color-primary-variant));
+
 }
 
 
-.btn {
-  min-height: 4.5rem;
-  width: 100%;
-  max-width: 30rem;
-  border-radius: 1rem;
-  margin-bottom: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgb(211, 211, 211);
-  /* box-shadow: .5rem .5rem 1rem rgba(var(--color-info-dark)); */
-}
-.btn svg {
-  font-size: 2.2rem;
-  margin-right: .4rem;
-}
+
 .btn-info{
   background: rgba(var(--color-warning));
 }

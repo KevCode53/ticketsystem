@@ -3,7 +3,10 @@ import styles from './styles.module.css'
 import Comment from '../../components/Comment'
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { useState } from 'react';
+import SendIcon from '@mui/icons-material/Send';
+import CameraAltIcon from '@mui/icons-material/CameraAlt';
+
+import { useEffect, useState } from 'react';
 
 
 export interface comment {
@@ -20,14 +23,20 @@ const index = ({comments}:any) => {
     setIsVisible(!isVisible)
   }
 
-  console.log(comments)
-
   return (
     <div className={`
       ${styles.CommentsListCotainer}
     `}>
       <div onClick={toggleDiv} className={styles.title}>
-        <h4>Show Comments</h4>
+        <div className={styles.title_container}>
+          {comments.length > 0
+            ? (
+                <h4>Show Comments <small> • {comments.length} {comments.length > 1
+                  ? 'comments' : 'comment'}</small></h4>
+              )
+            : <h4>This ticket has no comments</h4>
+          }
+        </div>
         <ExpandMoreIcon className={`
           ${isVisible && styles.rotateIcon}
         `} />
@@ -38,10 +47,21 @@ const index = ({comments}:any) => {
       `}>
         {comments !== undefined && (
           comments.map((comment:any) => (
-            <Comment data={comment} />
+            <Comment key={comment.id}  data={comment} />
           ))
         )}
       </div>
+      <form action="" className={styles.comment_form}>
+        <textarea name="" id="" rows="1" placeholder='Add a comment'></textarea>
+        <div className={styles.buttons}>
+          <button>
+            <CameraAltIcon fontSize='large' />
+          </button>
+          <button>
+            <SendIcon fontSize='large' />
+          </button>
+        </div>
+      </form>
     </div>
   );
 }

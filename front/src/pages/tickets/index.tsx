@@ -2,6 +2,8 @@ import styles from './styles.module.css'
 
 import { useState } from 'react'
 import reactLogo from '../../assets/react.svg'
+import SearchIcon from '@mui/icons-material/Search';
+
 // import './App.css'
 
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
@@ -60,7 +62,12 @@ const index = () => {
             <input type="text" required />
             <label htmlFor="">Search Tickets</label>
           </div>
-          <input type="submit" value="Search" />
+          <button type="submit">
+            <SearchIcon fontSize='large' />
+            <span>
+              Search
+            </span>
+          </button>
           <small>You can search by name, by ticket number, <b>then press search or enter</b></small>
         </form>
       </div>

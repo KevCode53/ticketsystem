@@ -4,7 +4,7 @@
   width: 100%;
   min-width: 20rem;
   height: 100vh;
-  z-index: 1;
+  z-index: 10;
   transform: translateX(-100%);
   transition: all ease 300ms;
 }
@@ -121,6 +121,8 @@
   flex-direction: column;
   height: calc(100% - (10rem + 19.6rem));
 }
+
+
 
 @media (min-width: 768px) {
   .sidebar {

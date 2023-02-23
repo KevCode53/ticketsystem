@@ -8,6 +8,7 @@ import Home from '../pages/home/index'
 import Tickets from '../pages/tickets'
 import NoFound from '../pages/noFound'
 import Detail from '../pages/DetailTicket'
+import TestPage from '../pages/test'
 
 import { MenuContextProvider } from '../context/counterContext'
 
@@ -23,6 +24,7 @@ function App() {
           <Route path='/home' element={<Home />} />
           <Route path='/tickets' element={<Tickets />} />
           <Route path='/tickets/:id' element={<Detail />} />
+          <Route path='/test' element={<TestPage />} />
           <Route path='*' element={<NoFound/>} />
         </Routes>
       </Layout>

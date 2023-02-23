@@ -18,6 +18,7 @@ class CommentSerializer(serializers.ModelSerializer):
     model = CustomTokenUserProfileSerializer.Meta.model
     self.image = getCommentProfile(instance.created_by.id, model)
     return {
+      'id': instance.id,
       'created': instance.created,
       'comment': instance.comment,
       'user_id': instance.created_by.id,

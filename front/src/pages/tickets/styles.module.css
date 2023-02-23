@@ -8,16 +8,18 @@
 }
 .quickView {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
   justify-content: center;
-  gap: 2.4rem;
+  gap: .6rem;
 }
 .quickCard {
   display: flex;
   width: 100%;
+  min-height: 6rem;
   align-items: flex-start;
   justify-content: center;
   position: relative;
+  overflow: hidden;
 }
 .quickCard{
   display: flex;
@@ -27,7 +29,7 @@
 }
 
 .quickCard h3 {
-  font-size: clamp(6rem, 2vw, 12rem);
+  font-size: clamp(3rem, 4vw, 12rem);
   color: rgba(var(--color-dark));
   font-weight: 800;
 }
@@ -36,8 +38,11 @@
 }
 .quickCard svg {
   transform: rotate(15deg);
-  font-size: clamp(12rem, 10vw, 14rem);
+  font-size: clamp(6rem, 10vw, 14rem);
   right: 0;
+  position: absolute;
+  z-index: -1;
+  display: none;
 }
 .quickCard.info svg {
   fill: rgba(var(--color-info-light));
@@ -69,8 +74,8 @@
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
-.searchForm input[type=submit] {
-  width: 100%;
+.searchForm button[type=submit] {
+  min-width: 3rem;
   max-width: 15rem;
   background: rgba(var(--color-primary));
   height: 4.5rem;
@@ -82,11 +87,22 @@
   font-weight: 500;
   font-size: 1.6rem;
   color: rgba(var(--color-white));
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: all 300ms ease;
+  padding: 1.6rem;
 }
-.searchForm input[type=submit]:hover {
+.searchForm button[type=submit]:hover {
   font-size: 1.8rem;
 }
+.searchForm button[type=submit] span {
+  display: none;
+}
+.searchForm small {
+  display: none;
+}
+
 
 .searchForm small {
   position: absolute;
@@ -96,6 +112,14 @@
 
 .containerList {
   padding: 2rem .1rem !important;
+  overflow-x: scroll;
+}
+
+@media (min-width: 400px) {
+  .quickCard svg {
+    display: flex;
+  }
+
 }
 
 
@@ -103,5 +127,15 @@
 @media (min-width: 600px) {
   .quickView {
     /* flex-direction: row; */
+  }
+  .quickCard svg {
+    position: relative;
+  }
+
+  .searchForm button[type=submit] span {
+    display: flex;
+  }
+  .searchForm small {
+    display: flex;
   }
 }

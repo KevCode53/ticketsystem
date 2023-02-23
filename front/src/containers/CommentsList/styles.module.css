@@ -14,6 +14,7 @@
   transition: all 300ms ease;
   /* padding-right: 0; */
   width: 100%;
+  margin-bottom: 2.2rem;
 }
 
 .title {
@@ -21,6 +22,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.6rem 0;
+  cursor: pointer;
 }
 .title svg {
   font-size: 1.8rem;
@@ -44,4 +46,41 @@
 .rotateIcon {
   transform: rotate(180deg);
   transition: all 300ms ease;
+}
+
+.comment_form {
+  width: 100%;
+  /* padding-left: 3.6rem; */
+  margin-top: .6rem;
+}
+.comment_form textarea{
+  width: 100%;
+  resize: none;
+  padding: .8rem;
+  border-radius: var(--card-border-radius);
+  background: rgba(var(--color-info-dark), .19);
+  color: rgba(0,0,0,.6);
+  border: .1rem solid rgba(var(--color-info-light));
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem;
+  /* display: none; */
+}
+.buttons button {
+  height: 3.5rem;
+  width: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  border: .2rem solid rgba(var(--color-primary-variant));
+  color: rgba(var(--color-primary-variant));
+  transition: all 300ms ease;
+  padding-bottom: 0;
+}
+.buttons button:hover {
+  background: rgba(var(--color-primary-variant));
+  color: white;
 }
